@@ -1,32 +1,20 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  Button,
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import FirstView from './components/FirstView';
 import SecondView from './components/SecondView';
 
+const Stack = createStackNavigator();
+
 export default function App() {
   return (
-    <>
-      <FirstView />
-      <SecondView />
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="First View" component={FirstView} />
+        <Stack.Screen name="Second View" component={SecondView} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

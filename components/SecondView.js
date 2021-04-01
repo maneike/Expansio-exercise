@@ -11,6 +11,10 @@ import {
   View,
 } from 'react-native';
 
-export default function SecondView(props) {
-  return <View></View>;
+export default function SecondView(props, {navigation, route}) {
+  return (
+    <View>
+      <Text>{route.params.sentMessage}</Text>
+    </View>
+  );
 }

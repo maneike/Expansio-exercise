@@ -21,13 +21,14 @@ const StyledButton = ({onPress, title}) => (
   </TouchableOpacity>
 );
 
-export default function FirstView() {
+export default function FirstView({navigation}) {
   const [count, setCount] = useState(0);
   const {data, loading} = useFetch('https://api.randomuser.me');
   const [message, setMessage] = useState('');
 
   const handleSubmit = () => {
-    alert(message);
+    setMessage('');
+    NavigationPreloadManager.navigate('SecondView', {sentMessage: message});
   };
 
   return (
