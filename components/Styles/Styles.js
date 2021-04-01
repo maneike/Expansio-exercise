@@ -36,6 +36,12 @@ export const styles = StyleSheet.create({
     padding: 10,
     alignSelf: 'center',
   },
+  messageBox: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    margin: 50,
+  },
   prettyCounter: {
     alignSelf: 'center',
     justifyContent: 'center',

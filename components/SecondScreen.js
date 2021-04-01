@@ -12,7 +12,7 @@ export default function SecondView({navigation, route}) {
       <View style={styles.prettyCounter}>
         <Text>{route.params.count}</Text>
       </View>
-      <View style={styles.counter}>
+      <View style={styles.messageBox}>
         <Text>{route.params.message || 'Brak wiadomości'}</Text>
       </View>
       <StyledButton title="Wstecz" onPress={handleBack} />
