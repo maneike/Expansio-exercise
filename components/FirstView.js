@@ -24,10 +24,12 @@ const StyledButton = ({onPress, title}) => (
 export default function FirstView() {
   const [count, setCount] = useState(0);
   const {data, loading} = useFetch('https://api.randomuser.me');
-  const [message, setMessage] = useState('hey');
+  const [message, setMessage] = useState('');
+
   const handleSubmit = () => {
     alert(message);
   };
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -62,9 +64,9 @@ export default function FirstView() {
         </View>
         <View>
           <TextInput
-            onChange={e => setMessage(e.target.value)}
+            onChangeText={message => setMessage(message)}
             style={styles.input}
-            value={null}
+            defaultValue={message}
             placeholder="Tutaj wpisz tekst..."
           />
         </View>
