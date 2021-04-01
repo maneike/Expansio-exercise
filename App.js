@@ -21,6 +21,7 @@ function App() {
   return (
     <SafeAreaView>
       <Text>Init</Text>
+      <Text>Commit test</Text>
     </SafeAreaView>
   );
 }
