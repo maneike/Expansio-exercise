@@ -31,7 +31,6 @@ export default function FirstView({navigation}) {
             </Text>
           </View>
         )}
-
         <View style={styles.counter}>
           <StyledButton title="-" onPress={() => setCount(count - 1)} />
           <Text>{count}</Text>
