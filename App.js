@@ -3,8 +3,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import FirstView from './components/FirstView';
-import SecondView from './components/SecondView';
+import FirstScreen from './components/FirstScreen';
+import SecondScreen from './components/SecondScreen';
 
 const Stack = createStackNavigator();
 
@@ -12,8 +12,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="First View" component={FirstView} />
-        <Stack.Screen name="Second View" component={SecondView} />
+        <Stack.Screen name="First Screen" component={FirstScreen} />
+        <Stack.Screen name="Second Screen" component={SecondScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
