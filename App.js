@@ -19,44 +19,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import useFetch from './helpers/useFetch';
+import FirstView from './components/FirstView';
+import SecondView from './components/SecondView';
 
-function App() {
-  const {data, loading} = useFetch('https://api.randomuser.me');
+export default function App() {
   return (
-    <SafeAreaView>
-      <View styles={styles.container}>
-        <View style="styles.userInfo">
-          {!data && loading ? (
-            <Text>...loading</Text>
-          ) : (
-            <View>
-              <Image
-                style={{width: 50, height: 50, borderRadius: 37.5}}
-                source={{uri: data.picture.thumbnail}}
-              />
-              <Text>
-                {data.name.first} {data.name.last}
-              </Text>
-            </View>
-          )}
-        </View>
-        <View>
-          <Button title="hello"></Button>
-        </View>
-      </View>
-    </SafeAreaView>
+    <>
+      <FirstView />
+      <SecondView />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 50,
-  },
-  userInfo: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-});
-
-export default App;
